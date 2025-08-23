@@ -13,3 +13,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/todos',[App\Http\Controllers\TodoController::class, 'index'])->name('todos:index');
+
+Route::get('/todos/create', [App\Http\Controllers\TodoController::class, 'create'])->name('todos:create');
