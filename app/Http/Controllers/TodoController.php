@@ -19,5 +19,18 @@ class TodoController extends Controller
         return view('todos.create');
     }
     
-    
+    public function store(Request $request)
+    {
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required|string|max:1000',
+        ]);
+
+        Todo::create([
+            'title' => $request->title,
+            'description' => $request->description,
+        ]);
+
+        return redirect()->route('todos:index')->with('success', 'Todo created successfully!');
+    }
 }
