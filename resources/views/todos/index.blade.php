@@ -30,6 +30,7 @@
                                     <div class="ms-3">
                                         <a href="{{ route('todos:show', $todo) }}" class="btn btn-secondary">Show</a>
                                         <a href="{{ route('todos:edit', $todo) }}" class="btn btn-secondary">Edit</a>
+                                        <a onclick="return confirm('Are you sure you want to delete this todo?')" href="{{ route('todos:destroy', $todo) }}" class="btn btn-danger">Delete</a>
                                     </div>
                                 </div>
                             @endforeach
