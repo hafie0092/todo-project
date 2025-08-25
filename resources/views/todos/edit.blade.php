@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Edit Todo') }}</div>
 
                 <div class="card-body"> 
-                    <form action="" method="POST">
+                    <form action="{{ route('todos:update', $todo) }}" method="POST">
                         @csrf
                         <div class="form-group mb-3">
                             <label> Title </label>
@@ -26,3 +26,6 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
+@endsection

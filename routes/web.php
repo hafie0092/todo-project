@@ -19,3 +19,5 @@ Route::post('/todos', [App\Http\Controllers\TodoController::class, 'store'])->na
 Route::get('/todos/{todo}', [App\Http\Controllers\TodoController::class, 'show'])->name('todos:show');
 
 Route::get('/todos/{todo}/edit', [App\Http\Controllers\TodoController::class, 'edit'])->name('todos:edit');
+
+Route::post('/todos/{todo}', [App\Http\Controllers\TodoController::class, 'update'])->name('todos:update');
