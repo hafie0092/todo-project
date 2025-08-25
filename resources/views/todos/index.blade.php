@@ -21,10 +21,16 @@
                     @if($todos->count() > 0)
                         <div class="list-group">
                             @foreach($todos as $todo)
-                                <div class="list-group-item">
-                                    <h5 class="mb-1">{{ $todo->title }}</h5>
-                                    <p class="mb-1">{{ $todo->description }}</p>
-                                    <small class="text-muted">Created: {{ $todo->created_at->format('M d, Y H:i') }}</small>
+                                <div class="list-group-item d-flex justify-content-between align-items-start">
+                                    <div class="ms-2 me-auto">
+                                        <h5 class="mb-1">{{ $todo->title }}</h5>
+                                        <p class="mb-1">{{ $todo->description }}</p>
+                                        <small class="text-muted">Created: {{ $todo->created_at->format('M d, Y H:i') }}</small>
+                                    </div>
+                                    <div class="ms-3">
+                                        <a href="{{ route('todos:show', $todo) }}" class="btn btn-secondary">Show</a>
+                                        <a href="{{ route('todos:edit', $todo) }}" class="btn btn-secondary">Edit</a>
+                                    </div>
                                 </div>
                             @endforeach
                         </div>
